@@ -131,6 +131,8 @@ export default class extends Component {
     autoplayDirection: PropTypes.bool,
     index: PropTypes.number,
     renderPagination: PropTypes.func,
+    renderRightButton: PropTypes.func,
+    renderLeftButton: PropTypes.func,
     dotStyle: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.number,
@@ -689,7 +691,9 @@ export default class extends Component {
           this.props.paginationStyle
         ]}
       >
+        {this.props.renderLeftButton}
         {dots}
+        {this.props.renderRightButton}
       </View>
     )
   }
