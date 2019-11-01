@@ -685,14 +685,20 @@ export default class extends Component {
 
     return (
       <View
-        pointerEvents="none"
-        style={[
-          styles['pagination_' + this.state.dir],
-          this.props.paginationStyle
-        ]}
+      style={[
+        styles['pagination_' + this.state.dir],
+      ]}
       >
         {this.props.renderLeftButton}
-        {dots}
+        <View
+          style={[
+            styles['pagination_' + this.state.dir],
+            this.props.paginationStyle
+          ]}
+          pointerEvents="none"
+        >
+          {dots}
+        </View>
         {this.props.renderRightButton}
       </View>
     )
